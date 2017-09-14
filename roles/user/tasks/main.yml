@@ -1,0 +1,7 @@
+---
+- name: Add &  create user
+  user: name={{item.username}} shell=/bin/bash createhome=yes 
+  with_items: "{{users}}"
+- name: Add authorized keys
+  authorized_key: user={{item.username}} key="{{ lookup('file', 'files/{{item.username}}.pub')}}"
+  with_items: "{{users}}"

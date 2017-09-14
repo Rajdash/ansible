@@ -1,2 +1,7 @@
 ---
 my_name: RAJA
+users:
+  - username: raju
+    use_sudo: no
+  - username: ravi
+    use_sudo: yes
